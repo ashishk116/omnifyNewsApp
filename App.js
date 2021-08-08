@@ -18,7 +18,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchNews();
+    this.fetchNews();//this is the default first will call everytime the app opensup
     
   }
 
@@ -36,12 +36,18 @@ getStoredNews(){
   return storedNews;
 }
 
+
+//This function gets the news from the getNews funtion
   fetchNews() {
+
+    //setting the state of articles to show the news
     getNews()
       .then(articles => this.setState({ articles, refreshing: false }))
       .catch(() => this.setState({ refreshing: false }));
   }
 
+
+  //handles the refresh of news on the app
   handleRefresh() {
     this.setState(
       {
@@ -51,7 +57,7 @@ getStoredNews(){
     );
   }
 
-
+//Funtion to show the Datepicker for range
   showdatepicker(){
     console.log("chekcing this block")
     this.setState(
