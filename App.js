@@ -62,7 +62,7 @@ getStoredNews(){
     console.log("chekcing this block")
     this.setState(
       {
-        showDatepic: true
+        showDatepic: 'true'
       }
       )
   }
@@ -81,7 +81,7 @@ getStoredNews(){
             onNavigation={() => console.log('onNavigation!')}
             actionItems={[ 
              <TouchableOpacity
-             onPress={this.showdatepicker}>
+             onPress={this.showdatepicker.bind(this)}>
               <Text style={{color:'white',fontWeight:'bold'}}>Date Filter</Text>
               </TouchableOpacity>
             ]
@@ -98,6 +98,7 @@ getStoredNews(){
             allowFontScaling = {false} // optional
             placeholder={'Apr 27, 2018 → Jul 10, 2018'}
             mode={'range'}
+            onConfirm={value=>console.log("checking Date",value)}
         />
 
         }
