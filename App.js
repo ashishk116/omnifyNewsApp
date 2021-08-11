@@ -67,6 +67,12 @@ getStoredNews(){
       )
   }
 
+getTheRange(value){
+console.log("chekcing range",value)
+
+}
+
+
   render() {
 
     
@@ -98,7 +104,7 @@ getStoredNews(){
             allowFontScaling = {false} // optional
             placeholder={'Apr 27, 2018 → Jul 10, 2018'}
             mode={'range'}
-            onConfirm={value=>console.log("checking Date",value)}
+            onConfirm={value=>this.getTheRange(value)}
         />
 
         }
